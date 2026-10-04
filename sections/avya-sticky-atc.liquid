@@ -1,0 +1,30 @@
+{%- comment -%}
+  AVYA — Barre d'achat collante sur mobile.
+  Apparaît quand le bouton « Ajouter au panier » principal sort de l'écran,
+  et déclenche ce même bouton (la variante choisie est donc respectée).
+{%- endcomment -%}
+{%- if product -%}
+  <div class="avya-sticky-atc color-{{ section.settings.color_scheme }}" data-avya-sticky-atc hidden>
+    <div class="avya-sticky-atc__info">
+      <p class="avya-sticky-atc__title">{{ product.title | escape }}</p>
+      <p class="avya-sticky-atc__price" data-avya-sticky-price>
+        {{- product.selected_or_first_available_variant.price | money -}}
+      </p>
+    </div>
+    <button type="button" class="button button--primary" data-avya-sticky-button>
+      {{ 'products.product.add_to_cart' | t }}
+    </button>
+  </div>
+  <script src="{{ 'avya.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "AVYA – Achat collant",
+  "tag": "section",
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Palette de couleurs", "default": "scheme-1" }
+  ],
+  "enabled_on": { "templates": ["product"] }
+}
+{% endschema %}

@@ -1,51 +1,115 @@
 {
   "sections": {
-    "image_banner": {
+    "hero": {
       "type": "image-banner",
       "blocks": {
+        "eyebrow": {
+          "type": "text",
+          "settings": {
+            "text": "Nouvelle collection",
+            "text_style": "caption-with-letter-spacing"
+          }
+        },
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Browse our latest products",
+            "heading": "Sculptée pour vous suivre",
             "heading_size": "h0"
           }
         },
-        "button": {
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "Des body gainants qui lissent la silhouette, du matin au soir, sans se faire remarquer.",
+            "text_style": "body"
+          }
+        },
+        "buttons": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Shop all",
+            "button_label_1": "Découvrir les body",
             "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "button_style_secondary_1": false,
+            "button_label_2": "Trouver mon maintien",
+            "button_link_2": "shopify://collections/all",
+            "button_style_secondary_2": true
           }
         }
       },
       "block_order": [
+        "eyebrow",
         "heading",
-        "button"
+        "text",
+        "buttons"
       ],
       "settings": {
-        "image_overlay_opacity": 40,
+        "image_overlay_opacity": 20,
         "image_height": "large",
-        "desktop_content_position": "bottom-center",
+        "desktop_content_position": "bottom-left",
         "show_text_box": false,
-        "image_behavior": "none",
-        "desktop_content_alignment": "center",
+        "image_behavior": "ambient",
+        "desktop_content_alignment": "left",
         "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
+        "mobile_content_alignment": "left",
         "stack_images_on_mobile": false,
         "show_text_below": false
       }
     },
-    "featured_collection": {
+    "assurance": {
+      "type": "avya-reassurance",
+      "blocks": {
+        "b1": {
+          "type": "item",
+          "settings": {
+            "icon": "truck",
+            "title": "Livraison suivie",
+            "text": "Expédiée sous 48 h"
+          }
+        },
+        "b2": {
+          "type": "item",
+          "settings": {
+            "icon": "return",
+            "title": "Retours simples",
+            "text": "Sous 30 jours"
+          }
+        },
+        "b3": {
+          "type": "item",
+          "settings": {
+            "icon": "lock",
+            "title": "Paiement sécurisé",
+            "text": "Carte, Apple Pay, PayPal"
+          }
+        },
+        "b4": {
+          "type": "item",
+          "settings": {
+            "icon": "ruler",
+            "title": "Taille juste",
+            "text": "Guide des tailles détaillé"
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "essentials": {
       "type": "featured-collection",
       "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
+        "title": "Les essentiels",
+        "heading_size": "h1",
+        "description": "<p>Nos body les plus portés, pensés pour disparaître sous les vêtements.</p>",
+        "show_description": true,
         "description_style": "body",
         "collection": "all",
         "products_to_show": 8,
@@ -53,23 +117,230 @@
         "color_scheme": "scheme-1",
         "full_width": false,
         "show_view_all": true,
-        "view_all_style": "solid",
+        "view_all_style": "outline",
         "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
-        "image_ratio": "adapt",
+        "swipe_on_mobile": true,
+        "image_ratio": "portrait",
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
-        "quick_add": "none",
+        "quick_add": "standard",
         "columns_mobile": "2",
-        "padding_top": 44,
-        "padding_bottom": 36
+        "padding_top": 64,
+        "padding_bottom": 48
+      }
+    },
+    "maintien": {
+      "type": "avya-support-guide",
+      "blocks": {
+        "l1": {
+          "type": "level",
+          "settings": {
+            "name": "Léger",
+            "level": "1",
+            "text": "Lisse et unifie en douceur. Idéal au quotidien, sous un t-shirt ou une maille fine.",
+            "cta": "Voir le maintien léger",
+            "link": "shopify://collections/all"
+          }
+        },
+        "l2": {
+          "type": "level",
+          "settings": {
+            "name": "Modéré",
+            "level": "2",
+            "text": "Affine la taille et soutient le ventre. Le bon équilibre entre confort et tenue.",
+            "cta": "Voir le maintien modéré",
+            "link": "shopify://collections/all"
+          }
+        },
+        "l3": {
+          "type": "level",
+          "settings": {
+            "name": "Ferme",
+            "level": "3",
+            "text": "Sculpte et tient en place pour les tenues ajustées et les grandes occasions.",
+            "cta": "Voir le maintien ferme",
+            "link": "shopify://collections/all"
+          }
+        }
+      },
+      "block_order": [
+        "l1",
+        "l2",
+        "l3"
+      ],
+      "settings": {
+        "eyebrow": "Trouver votre maintien",
+        "heading": "Trois niveaux, une silhouette",
+        "text": "Choisissez d'abord l'effet recherché, puis le modèle. Chaque body indique son niveau de maintien.",
+        "color_scheme": "scheme-1",
+        "padding_top": 48,
+        "padding_bottom": 72
+      }
+    },
+    "story": {
+      "type": "image-with-text",
+      "blocks": {
+        "cap": {
+          "type": "caption",
+          "settings": {
+            "caption": "La maison AVYA",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
+        "h": {
+          "type": "heading",
+          "settings": {
+            "heading": "Le confort comme point de départ",
+            "heading_size": "h1"
+          }
+        },
+        "t": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Chaque body AVYA est conçu pour épouser le corps sans le contraindre : coutures discrètes, matières respirantes, tailles pensées pour toutes les morphologies.</p>",
+            "text_style": "body"
+          }
+        },
+        "btn": {
+          "type": "button",
+          "settings": {
+            "button_label": "Notre histoire",
+            "button_link": "",
+            "button_style_secondary": true
+          }
+        }
+      },
+      "block_order": [
+        "cap",
+        "h",
+        "t",
+        "btn"
+      ],
+      "settings": {
+        "height": "large",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-2",
+        "color_scheme": "scheme-2",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "faq": {
+      "type": "collapsible-content",
+      "blocks": {
+        "q1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Comment choisir ma taille ?",
+            "icon": "ruler",
+            "row_content": "<p>Mesurez votre tour de taille et de hanches, puis reportez-vous au guide des tailles de chaque modèle. Entre deux tailles, prenez la plus grande pour plus de confort.</p>"
+          }
+        },
+        "q2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Quel niveau de maintien choisir ?",
+            "icon": "heart",
+            "row_content": "<p>Léger pour lisser au quotidien, modéré pour affiner la taille, ferme pour sculpter sous une tenue ajustée. Le niveau est indiqué sur chaque produit.</p>"
+          }
+        },
+        "q3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Peut-on le porter toute la journée ?",
+            "icon": "check_mark",
+            "row_content": "<p>Nos body sont pensés pour un port prolongé. Si vous débutez avec le gainant, commencez par quelques heures et privilégiez un maintien léger ou modéré.</p>"
+          }
+        },
+        "q4": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Comment l'entretenir ?",
+            "icon": "washing",
+            "row_content": "<p>Lavage à la main ou en machine à 30 °C dans un filet, sans adoucissant. Séchage à plat, à l'abri du soleil.</p>"
+          }
+        },
+        "q5": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Livraison et retours",
+            "icon": "truck",
+            "row_content": "<p>Commande expédiée sous 48 h avec suivi. Retours possibles sous 30 jours, article non porté et dans son emballage d'origine.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5"
+      ],
+      "settings": {
+        "caption": "Questions fréquentes",
+        "heading": "Tout savoir avant de choisir",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "container_color_scheme": "scheme-1",
+        "color_scheme": "scheme-1",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 72,
+        "padding_bottom": 56
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "blocks": {
+        "h": {
+          "type": "heading",
+          "settings": {
+            "heading": "Le cercle AVYA",
+            "heading_size": "h1"
+          }
+        },
+        "p": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Nouveautés, conseils de taille et accès en avant-première. Pas plus d'un e-mail par semaine.</p>"
+          }
+        },
+        "f": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "h",
+        "p",
+        "f"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "full_width": true,
+        "padding_top": 64,
+        "padding_bottom": 64
       }
     }
   },
   "order": [
-    "image_banner",
-    "featured_collection"
+    "hero",
+    "assurance",
+    "essentials",
+    "maintien",
+    "story",
+    "faq",
+    "newsletter"
   ]
 }

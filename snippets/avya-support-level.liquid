@@ -1,0 +1,43 @@
+{%- comment -%}
+  AVYA — Affiche le niveau de maintien d'un produit.
+  Le niveau vient d'une étiquette (tag) du produit :
+    « Maintien léger », « Maintien modéré » ou « Maintien ferme ».
+
+  Paramètres :
+  - product : objet produit (obligatoire)
+  - style   : 'compact' (cartes) ou 'full' (fiche produit)
+
+  Exemple : {% render 'avya-support-level', product: product, style: 'full' %}
+{%- endcomment -%}
+
+{%- liquid
+  assign level = 0
+  for tag in product.tags
+    assign t = tag | handleize
+    case t
+      when 'maintien-leger'
+        assign level = 1
+        assign label = 'Léger'
+      when 'maintien-modere'
+        assign level = 2
+        assign label = 'Modéré'
+      when 'maintien-ferme'
+        assign level = 3
+        assign label = 'Ferme'
+    endcase
+  endfor
+-%}
+
+{%- if level > 0 -%}
+  <div class="avya-support{% if style == 'full' %} avya-support--full{% endif %}">
+    <span>
+      {%- if style == 'full' -%}Maintien : {% endif -%}
+      {{- label -}}
+    </span>
+    <span class="avya-support__bars" aria-hidden="true">
+      {%- for i in (1..3) -%}
+        <span class="avya-support__bar{% if i <= level %} is-on{% endif %}"></span>
+      {%- endfor -%}
+    </span>
+  </div>
+{%- endif -%}

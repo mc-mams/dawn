@@ -1,0 +1,92 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width section-{{ section.id }}-padding">
+    <ul class="avya-assurance">
+      {%- for block in section.blocks -%}
+        <li
+          {{ block.shopify_attributes }}
+          {% if settings.animations_reveal_on_scroll %}
+            class="scroll-trigger animate--fade-in"
+          {% endif %}
+        >
+          <span class="avya-assurance__icon" aria-hidden="true">
+            {%- case block.settings.icon -%}
+              {%- when 'truck' -%}
+                <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M3 8h16v14H3zM19 13h6l4 5v4h-10z"/><circle cx="9" cy="24" r="2.5"/><circle cx="24" cy="24" r="2.5"/></svg>
+              {%- when 'return' -%}
+                <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M10 9 5 14l5 5"/><path d="M5 14h15a7 7 0 0 1 0 14h-5"/></svg>
+              {%- when 'lock' -%}
+                <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="7" y="14" width="18" height="13"/><path d="M11 14V10a5 5 0 0 1 10 0v4"/><path d="M16 19v3"/></svg>
+              {%- when 'ruler' -%}
+                <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M4 22 22 4l6 6L10 28z"/><path d="m9 17 2 2M13 13l3 3M17 9l2 2"/></svg>
+              {%- else -%}
+                <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M16 27s-10-6-10-13a5.5 5.5 0 0 1 10-3 5.5 5.5 0 0 1 10 3c0 7-10 13-10 13z"/></svg>
+            {%- endcase -%}
+          </span>
+          <p class="avya-assurance__title">{{ block.settings.title | escape }}</p>
+          <p class="avya-assurance__text">{{ block.settings.text | escape }}</p>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "AVYA – Réassurance",
+  "tag": "section",
+  "class": "section",
+  "max_blocks": 4,
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Palette de couleurs", "default": "scheme-2" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Marge haute", "default": 48 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Marge basse", "default": 48 }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Engagement",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icône",
+          "options": [
+            { "value": "truck", "label": "Livraison" },
+            { "value": "return", "label": "Retours" },
+            { "value": "lock", "label": "Paiement sécurisé" },
+            { "value": "ruler", "label": "Tailles" },
+            { "value": "heart", "label": "Cœur" }
+          ],
+          "default": "truck"
+        },
+        { "type": "text", "id": "title", "label": "Titre", "default": "Livraison suivie" },
+        { "type": "text", "id": "text", "label": "Texte", "default": "Expédiée sous 48 h" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "AVYA – Réassurance",
+      "blocks": [
+        { "type": "item", "settings": { "icon": "truck" } },
+        { "type": "item", "settings": { "icon": "return", "title": "Retours simples", "text": "Sous 30 jours" } },
+        { "type": "item", "settings": { "icon": "lock", "title": "Paiement sécurisé", "text": "Carte, Apple Pay, PayPal" } },
+        { "type": "item", "settings": { "icon": "ruler", "title": "Taille juste", "text": "Guide des tailles détaillé" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
