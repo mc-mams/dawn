@@ -163,6 +163,7 @@
               </a>
             </h3>
             <div class="card-information">
+              {%- render 'avya-support-level', product: card_product, style: 'compact' -%}
               {%- if show_vendor -%}
                 <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
                 <div class="caption-with-letter-spacing light">{{ card_product.vendor }}</div>

@@ -1,0 +1,300 @@
+/* ==========================================================================
+   AVYA — couche de style de la marque
+   Chargée après base.css. Couleurs et polices viennent des réglages du thème
+   (Ivoire, Lin, Cacao, Argile ; Bodoni Moda + Jost).
+   ========================================================================== */
+
+:root {
+  --avya-hairline: rgba(var(--color-foreground), 0.12);
+  --avya-ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+/* ---------- Typographie ---------- */
+h1, h2, .h0, .h1, .h2 {
+  letter-spacing: -0.01em;
+  line-height: 1.08;
+}
+
+.avya-eyebrow,
+.caption-with-letter-spacing {
+  font-family: var(--font-body-family);
+  font-size: 1.1rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.button,
+.shopify-challenge__button,
+.customer button {
+  font-size: 1.2rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  min-height: 4.8rem;
+}
+
+/* ---------- En-tête & barre d'annonce ---------- */
+.announcement-bar__message {
+  font-size: 1.1rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.header__menu-item span,
+.mega-menu__link {
+  font-size: 1.25rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.header__heading-link .h2 {
+  font-size: 2.6rem;
+  letter-spacing: 0.32em;
+}
+
+/* ---------- Cartes produit ---------- */
+.card-wrapper .card__heading {
+  font-family: var(--font-body-family);
+  font-size: 1.35rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.card-wrapper .price {
+  font-size: 1.35rem;
+}
+
+.card__media .media img {
+  transition: transform 0.9s var(--avya-ease), opacity 0.6s var(--avya-ease);
+}
+
+@media (hover: hover) {
+  .card-wrapper:hover .card__media .media img:first-child {
+    transform: scale(1.03);
+  }
+}
+
+/* ---------- Échelle de maintien (fiche, carte, guide) ---------- */
+.avya-support {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0.6rem 0 0;
+  font-size: 1.15rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(var(--color-foreground), 0.75);
+}
+
+.avya-support__bars {
+  display: inline-flex;
+  gap: 0.3rem;
+}
+
+.avya-support__bar {
+  width: 1.8rem;
+  height: 0.3rem;
+  background: rgba(var(--color-foreground), 0.15);
+}
+
+.avya-support__bar.is-on {
+  background: rgb(var(--color-foreground));
+}
+
+.avya-support--full {
+  margin: 1.6rem 0;
+  padding: 1.4rem 0;
+  border-top: 1px solid var(--avya-hairline);
+  border-bottom: 1px solid var(--avya-hairline);
+  justify-content: space-between;
+}
+
+.avya-support--full .avya-support__bar {
+  width: 3.2rem;
+}
+
+/* ---------- Fiche produit ---------- */
+.product__title h1 {
+  font-size: clamp(2.8rem, 4vw, 4rem);
+}
+
+.product__info-container .product-form__input .form__label {
+  font-size: 1.15rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.product__info-container .product__accordion summary .accordion__title {
+  font-size: 1.25rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Barre d'achat collante (mobile) */
+.avya-sticky-atc {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1rem 1.6rem calc(1rem + env(safe-area-inset-bottom));
+  background: rgb(var(--color-background));
+  border-top: 1px solid var(--avya-hairline);
+  transform: translateY(110%);
+  transition: transform 0.35s var(--avya-ease);
+}
+
+.avya-sticky-atc.is-visible {
+  transform: translateY(0);
+}
+
+.avya-sticky-atc__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.avya-sticky-atc__title {
+  margin: 0;
+  font-size: 1.2rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.avya-sticky-atc__price {
+  margin: 0.2rem 0 0;
+  font-size: 1.3rem;
+}
+
+.avya-sticky-atc .button {
+  min-width: 16rem;
+  min-height: 4.4rem;
+  padding: 0 1.6rem;
+}
+
+@media screen and (min-width: 990px) {
+  .avya-sticky-atc {
+    display: none;
+  }
+}
+
+/* ---------- Sections AVYA ---------- */
+.avya-section__header {
+  text-align: center;
+  max-width: 64rem;
+  margin: 0 auto 4rem;
+}
+
+.avya-section__header .avya-eyebrow {
+  margin: 0 0 1.2rem;
+}
+
+.avya-section__header p {
+  margin: 1.2rem 0 0;
+  color: rgba(var(--color-foreground), 0.75);
+}
+
+/* Guide du maintien */
+.avya-levels {
+  display: grid;
+  gap: 1.6rem;
+  grid-template-columns: 1fr;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (min-width: 750px) {
+  .avya-levels {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.avya-level {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  padding: 3.2rem 2.8rem;
+  border: 1px solid var(--avya-hairline);
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.4s var(--avya-ease), border-color 0.4s var(--avya-ease);
+}
+
+.avya-level:hover {
+  background: rgba(var(--color-foreground), 0.04);
+  border-color: rgba(var(--color-foreground), 0.35);
+}
+
+.avya-level__name {
+  margin: 0;
+}
+
+.avya-level__text {
+  margin: 0;
+  color: rgba(var(--color-foreground), 0.75);
+}
+
+.avya-level__cta {
+  margin-top: auto;
+  font-size: 1.15rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-underline-offset: 0.5rem;
+}
+
+/* Réassurance */
+.avya-assurance {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3.2rem 1.6rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+@media screen and (min-width: 990px) {
+  .avya-assurance {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.avya-assurance__icon {
+  display: inline-flex;
+  width: 3.2rem;
+  height: 3.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.avya-assurance__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.avya-assurance__title {
+  margin: 0 0 0.6rem;
+  font-family: var(--font-body-family);
+  font-size: 1.25rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.avya-assurance__text {
+  margin: 0;
+  font-size: 1.4rem;
+  color: rgba(var(--color-foreground), 0.75);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card__media .media img,
+  .avya-sticky-atc,
+  .avya-level {
+    transition: none;
+  }
+}
