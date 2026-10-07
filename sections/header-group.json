@@ -17,14 +17,14 @@
         "a1": {
           "type": "announcement",
           "settings": {
-            "text": "Livraison offerte dès 70 € d'achat",
+            "text": "Livraison suivie en 10 jours ouvrés environ",
             "link": ""
           }
         },
         "a2": {
           "type": "announcement",
           "settings": {
-            "text": "Retours sous 30 jours",
+            "text": "Paiement sécurisé",
             "link": ""
           }
         }
