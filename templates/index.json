@@ -63,15 +63,15 @@
           "settings": {
             "icon": "truck",
             "title": "Livraison suivie",
-            "text": "Expédiée sous 48 h"
+            "text": "10 jours ouvrés environ"
           }
         },
         "b2": {
           "type": "item",
           "settings": {
-            "icon": "return",
-            "title": "Retours simples",
-            "text": "Sous 30 jours"
+            "icon": "heart",
+            "title": "Service client",
+            "text": "Une question ? Écrivez-nous"
           }
         },
         "b3": {
@@ -79,7 +79,7 @@
           "settings": {
             "icon": "lock",
             "title": "Paiement sécurisé",
-            "text": "Carte, Apple Pay, PayPal"
+            "text": "Transactions chiffrées"
           }
         },
         "b4": {
@@ -274,7 +274,7 @@
           "settings": {
             "heading": "Livraison et retours",
             "icon": "truck",
-            "row_content": "<p>Commande expédiée sous 48 h avec suivi. Retours possibles sous 30 jours, article non porté et dans son emballage d'origine.</p>"
+            "row_content": "<p>Livraison suivie en 10 jours ouvrés environ. Le numéro de suivi vous est envoyé par e-mail dès l'expédition.</p><p>Les conditions de retour et de remboursement sont détaillées dans notre politique de retour.</p>"
           }
         }
       },
