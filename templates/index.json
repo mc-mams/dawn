@@ -3,41 +3,33 @@
     "hero": {
       "type": "image-banner",
       "blocks": {
-        "eyebrow": {
-          "type": "text",
-          "settings": {
-            "text": "Nouvelle collection",
-            "text_style": "caption-with-letter-spacing"
-          }
-        },
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Sculptée pour vous suivre",
+            "heading": "Le body, pensé à partir de vos besoins",
             "heading_size": "h0"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "Des body gainants qui lissent la silhouette, du matin au soir, sans se faire remarquer.",
+            "text": "Confort, morphologie, esthétique : chaque modèle part de vos besoins et de vos retours.",
             "text_style": "body"
           }
         },
         "buttons": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Découvrir les body",
-            "button_link_1": "shopify://collections/all",
+            "button_label_1": "Découvrir les bodies",
+            "button_link_1": "shopify://collections/bodies",
             "button_style_secondary_1": false,
-            "button_label_2": "Trouver mon maintien",
-            "button_link_2": "shopify://collections/all",
+            "button_label_2": "Trouver ma taille",
+            "button_link_2": "shopify://pages/guide-des-tailles",
             "button_style_secondary_2": true
           }
         }
       },
       "block_order": [
-        "eyebrow",
         "heading",
         "text",
         "buttons"
