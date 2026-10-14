@@ -13,6 +13,7 @@
 {%- assign rows = product.metafields.avya.tableau_tailles.value -%}
 
 {%- if rows != blank -%}
+  {{ 'avya-size-chart.css' | asset_url | stylesheet_tag }}
   {%- liquid
     assign has_stature = false
     assign has_torso = false
