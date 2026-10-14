@@ -1,0 +1,14 @@
+{%- comment -%}
+  AVYA — Affiche une plage de mesures « min–max » (cm).
+  Une seule valeur connue : elle est affichée seule. Aucune valeur : tiret.
+  Paramètres : min, max (nombres ou vides)
+{%- endcomment -%}
+{%- if min != blank and max != blank -%}
+  {%- if min == max -%}{{ min }}{%- else -%}{{ min }}–{{ max }}{%- endif -%}
+{%- elsif min != blank -%}
+  {{ min }}
+{%- elsif max != blank -%}
+  {{ max }}
+{%- else -%}
+  <span aria-label="Non renseigné">—</span>
+{%- endif -%}

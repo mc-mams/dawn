@@ -1,0 +1,73 @@
+{%- comment -%}
+  AVYA — Onglets de la fiche produit alimentés par les métachamps du produit.
+  Reprend le balisage des onglets Dawn (product__accordion) pour garder le même style.
+
+  Paramètres :
+  - product : objet produit (obligatoire)
+  - kind    : 'size' (guide des tailles) ou 'material' (composition et entretien)
+
+  Métachamps utilisés (namespace avya) :
+  - tableau_tailles : liste de métaobjets avya_taille
+  - conseil_coupe   : texte facultatif, propre au modèle
+  - composition, entretien : textes
+
+  Exemple : {% render 'avya-product-details', product: product, kind: 'size' %}
+{%- endcomment -%}
+
+{%- liquid
+  assign mf = product.metafields.avya
+  assign show = false
+  if kind == 'size'
+    assign show = true
+    assign heading = 'Guide des tailles'
+    assign icon = 'ruler'
+  elsif kind == 'material'
+    if mf.composition.value != blank or mf.entretien.value != blank
+      assign show = true
+    endif
+    assign heading = 'Composition et entretien'
+    assign icon = 'washing'
+  endif
+  assign details_id = 'AvyaDetails-' | append: kind | append: '-' | append: product.id
+-%}
+
+{%- if show -%}
+  <div class="product__accordion accordion quick-add-hidden">
+    <details id="{{ details_id }}">
+      <summary>
+        <div class="summary__title">
+          {% render 'icon-accordion', icon: icon %}
+          <h2 class="h4 accordion__title">{{ heading }}</h2>
+        </div>
+        {{- 'icon-caret.svg' | inline_asset_content -}}
+      </summary>
+      <div class="accordion__content rte" id="{{ details_id }}-content">
+        {%- if kind == 'size' -%}
+          {%- if mf.tableau_tailles.value != blank -%}
+            {% render 'avya-size-chart', product: product %}
+          {%- else -%}
+            <p>
+              Le tableau des tailles de ce modèle n'est pas encore disponible.
+              <a href="{{ routes.root_url | append: '/pages/contact' | replace: '//', '/' }}">Écrivez-nous</a>
+              avec vos mesures : nous vous aidons à choisir.
+            </p>
+          {%- endif -%}
+          {%- if mf.conseil_coupe.value != blank -%}
+            <p>{{ mf.conseil_coupe.value | escape | newline_to_br }}</p>
+          {%- endif -%}
+          <p>
+            Mesurez votre tour de poitrine, de taille et de hanches, ruban à plat, sans serrer.
+            <a href="{{ routes.root_url | append: '/pages/guide-des-tailles' | replace: '//', '/' }}">Comment prendre vos mesures</a>
+          </p>
+        {%- else -%}
+          {%- if mf.composition.value != blank -%}
+            <p><strong>Composition</strong><br>{{ mf.composition.value | escape | newline_to_br }}</p>
+          {%- endif -%}
+          {%- if mf.entretien.value != blank -%}
+            <p><strong>Entretien</strong><br>{{ mf.entretien.value | escape | newline_to_br }}</p>
+          {%- endif -%}
+        {%- endif -%}
+      </div>
+    </details>
+  </div>
+{%- endif -%}

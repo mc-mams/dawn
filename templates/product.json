@@ -50,19 +50,15 @@
           }
         },
         "tab_size": {
-          "type": "collapsible_tab",
+          "type": "custom_liquid",
           "settings": {
-            "heading": "Guide des tailles",
-            "icon": "ruler",
-            "content": "<p><strong>Tour de taille</strong> : mesurez au point le plus fin, ruban à plat, sans serrer.</p><p><strong>Tour de hanches</strong> : mesurez au point le plus large.</p><p><strong>Tour de poitrine</strong> : mesurez à hauteur de pointe, en soutien-gorge non rembourré.</p><p>Reportez ensuite vos mesures dans le tableau du modèle.</p>"
+            "custom_liquid": "{% render 'avya-product-details', product: product, kind: 'size' %}"
           }
         },
         "tab_material": {
-          "type": "collapsible_tab",
+          "type": "custom_liquid",
           "settings": {
-            "heading": "Composition et entretien",
-            "icon": "washing",
-            "content": "<p>Composition : à compléter.</p><p>Lavage à 30 °C dans un filet, sans adoucissant. Séchage à plat.</p>"
+            "custom_liquid": "{% render 'avya-product-details', product: product, kind: 'material' %}"
           }
         },
         "tab_shipping": {
