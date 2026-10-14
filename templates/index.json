@@ -53,7 +53,8 @@
         "mobile_content_alignment": "left",
         "stack_images_on_mobile": false,
         "show_text_below": false
-      }
+      },
+      "disabled": true
     },
     "assurance": {
       "type": "avya-reassurance",
@@ -62,16 +63,16 @@
           "type": "item",
           "settings": {
             "icon": "truck",
-            "title": "Livraison suivie",
-            "text": "10 jours ouvrés environ"
+            "title": "Livraison offerte",
+            "text": "France métropolitaine, 10 jours ouvrés environ"
           }
         },
         "b2": {
           "type": "item",
           "settings": {
-            "icon": "heart",
-            "title": "Service client",
-            "text": "Une question ? Écrivez-nous"
+            "icon": "return",
+            "title": "14 jours pour changer d'avis",
+            "text": "Conditions dans notre politique de retour"
           }
         },
         "b3": {
@@ -79,15 +80,15 @@
           "settings": {
             "icon": "lock",
             "title": "Paiement sécurisé",
-            "text": "Transactions chiffrées"
+            "text": "Paiement chiffré via Shopify"
           }
         },
         "b4": {
           "type": "item",
           "settings": {
             "icon": "ruler",
-            "title": "Taille juste",
-            "text": "Guide des tailles détaillé"
+            "title": "Aide au choix de taille",
+            "text": "Guide de mesure et conseil par e-mail"
           }
         }
       },
@@ -111,7 +112,7 @@
         "description": "<p>Nos body les plus portés, pensés pour disparaître sous les vêtements.</p>",
         "show_description": true,
         "description_style": "body",
-        "collection": "all",
+        "collection": "bodies",
         "products_to_show": 8,
         "columns_desktop": 4,
         "color_scheme": "scheme-1",
@@ -139,9 +140,9 @@
           "settings": {
             "name": "Léger",
             "level": "1",
-            "text": "Lisse et unifie en douceur. Idéal au quotidien, sous un t-shirt ou une maille fine.",
+            "text": "Une compression douce, pensée pour le quotidien et les matières fines.",
             "cta": "Voir le maintien léger",
-            "link": "shopify://collections/all"
+            "link": "/collections/bodies/maintien-leger"
           }
         },
         "l2": {
@@ -149,9 +150,9 @@
           "settings": {
             "name": "Modéré",
             "level": "2",
-            "text": "Affine la taille et soutient le ventre. Le bon équilibre entre confort et tenue.",
+            "text": "Une compression intermédiaire, pensée pour affiner la taille au quotidien.",
             "cta": "Voir le maintien modéré",
-            "link": "shopify://collections/all"
+            "link": "/collections/bodies/maintien-modere"
           }
         },
         "l3": {
@@ -159,9 +160,9 @@
           "settings": {
             "name": "Ferme",
             "level": "3",
-            "text": "Sculpte et tient en place pour les tenues ajustées et les grandes occasions.",
+            "text": "La compression la plus marquée, pensée pour les tenues ajustées et les occasions.",
             "cta": "Voir le maintien ferme",
-            "link": "shopify://collections/all"
+            "link": "/collections/bodies/maintien-ferme"
           }
         }
       },
@@ -171,9 +172,9 @@
         "l3"
       ],
       "settings": {
-        "eyebrow": "Trouver votre maintien",
-        "heading": "Trois niveaux, une silhouette",
-        "text": "Choisissez d'abord l'effet recherché, puis le modèle. Chaque body indique son niveau de maintien.",
+        "eyebrow": "Choisir son maintien",
+        "heading": "Trois niveaux de maintien",
+        "text": "Chaque body indique son niveau de maintien. Choisissez-le selon l'usage et la sensation recherchée.",
         "color_scheme": "scheme-1",
         "padding_top": 48,
         "padding_bottom": 72
@@ -200,7 +201,7 @@
         "t": {
           "type": "text",
           "settings": {
-            "text": "<p>Chaque body AVYA est conçu pour épouser le corps sans le contraindre : coutures discrètes, matières respirantes, tailles pensées pour toutes les morphologies.</p>",
+            "text": "<p>AVYA part d'une conviction : un body doit s'adapter à celle qui le porte. Nous partons des difficultés réelles des femmes — la taille, le confort, la tenue — et nous améliorons nos modèles grâce à vos retours.</p>",
             "text_style": "body"
           }
         },
@@ -208,7 +209,7 @@
           "type": "button",
           "settings": {
             "button_label": "Notre histoire",
-            "button_link": "",
+            "button_link": "shopify://pages/notre-histoire",
             "button_style_secondary": true
           }
         }
@@ -242,7 +243,7 @@
           "settings": {
             "heading": "Comment choisir ma taille ?",
             "icon": "ruler",
-            "row_content": "<p>Mesurez votre tour de taille et de hanches, puis reportez-vous au guide des tailles de chaque modèle. Entre deux tailles, prenez la plus grande pour plus de confort.</p>"
+            "row_content": "<p>Mesurez votre tour de poitrine, de taille et de hanches, puis comparez-les au tableau du modèle, sur sa fiche produit. Chaque modèle a sa propre coupe. Entre deux tailles ou en cas de doute, écrivez-nous avant de commander : nous vous aidons à choisir.</p>"
           }
         },
         "q2": {
@@ -250,15 +251,15 @@
           "settings": {
             "heading": "Quel niveau de maintien choisir ?",
             "icon": "heart",
-            "row_content": "<p>Léger pour lisser au quotidien, modéré pour affiner la taille, ferme pour sculpter sous une tenue ajustée. Le niveau est indiqué sur chaque produit.</p>"
+            "row_content": "<p>Chaque body indique un niveau de maintien : léger, modéré ou ferme. Le léger se porte facilement au quotidien ; le ferme est le plus compressif. Si vous débutez avec le gainant, commencez par un niveau léger ou modéré.</p>"
           }
         },
         "q3": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Peut-on le porter toute la journée ?",
+            "heading": "Puis-je retourner un body ?",
             "icon": "check_mark",
-            "row_content": "<p>Nos body sont pensés pour un port prolongé. Si vous débutez avec le gainant, commencez par quelques heures et privilégiez un maintien léger ou modéré.</p>"
+            "row_content": "<p>Oui, vous disposez de 14 jours après réception pour vous rétracter. Pour des raisons d'hygiène, l'article doit être non porté et renvoyé dans son emballage d'origine. Les frais de retour sont à votre charge. Toutes les conditions figurent dans notre politique de retour.</p>"
           }
         },
         "q4": {
@@ -266,15 +267,15 @@
           "settings": {
             "heading": "Comment l'entretenir ?",
             "icon": "washing",
-            "row_content": "<p>Lavage à la main ou en machine à 30 °C dans un filet, sans adoucissant. Séchage à plat, à l'abri du soleil.</p>"
+            "row_content": "<p>Les conseils d'entretien sont indiqués sur la fiche de chaque modèle et sur son étiquette. Suivez-les pour préserver la tenue du body.</p>"
           }
         },
         "q5": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Livraison et retours",
+            "heading": "Où et en combien de temps livrez-vous ?",
             "icon": "truck",
-            "row_content": "<p>Livraison suivie en 10 jours ouvrés environ. Le numéro de suivi vous est envoyé par e-mail dès l'expédition.</p><p>Les conditions de retour et de remboursement sont détaillées dans notre politique de retour.</p>"
+            "row_content": "<p>Nous livrons en France métropolitaine, livraison offerte, en 10 jours ouvrés environ. Le numéro de suivi vous est envoyé par e-mail dès l'expédition.</p>"
           }
         }
       },
@@ -313,7 +314,7 @@
         "p": {
           "type": "paragraph",
           "settings": {
-            "text": "<p>Nouveautés, conseils de taille et accès en avant-première. Pas plus d'un e-mail par semaine.</p>"
+            "text": "<p>Nouveautés et conseils de taille, directement dans votre boîte mail.</p>"
           }
         },
         "f": {
@@ -332,9 +333,61 @@
         "padding_top": 64,
         "padding_bottom": 64
       }
+    },
+    "hero_text": {
+      "type": "rich-text",
+      "blocks": {
+        "caption": {
+          "type": "caption",
+          "settings": {
+            "caption": "Bodies pour femmes",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Le body, pensé à partir de vos besoins",
+            "heading_size": "hxl"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Confort, morphologie, esthétique : nous construisons chaque modèle en partant des difficultés réelles des femmes qui portent des bodies, et de vos retours.</p>"
+          }
+        },
+        "buttons": {
+          "type": "button",
+          "settings": {
+            "button_label": "Découvrir les bodies",
+            "button_link": "shopify://collections/bodies",
+            "button_style_secondary": false,
+            "button_label_2": "Trouver ma taille",
+            "button_link_2": "shopify://pages/guide-des-tailles",
+            "button_style_secondary_2": true
+          }
+        }
+      },
+      "block_order": [
+        "caption",
+        "heading",
+        "text",
+        "buttons"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 96,
+        "padding_bottom": 96
+      }
     }
   },
   "order": [
+    "hero_text",
     "hero",
     "assurance",
     "essentials",

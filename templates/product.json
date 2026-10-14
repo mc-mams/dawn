@@ -45,7 +45,7 @@
         "size_tip": {
           "type": "text",
           "settings": {
-            "text": "Entre deux tailles ? Choisissez la plus grande.",
+            "text": "Un doute sur la taille ? Consultez le guide ci-dessous ou écrivez-nous.",
             "text_style": "subtitle"
           }
         },
@@ -70,7 +70,7 @@
           "settings": {
             "heading": "Livraison et retours",
             "icon": "truck",
-            "content": "<p>Livraison suivie en 10 jours ouvrés environ. Le numéro de suivi vous est envoyé par e-mail dès l'expédition.</p><p>Les conditions de retour et de remboursement sont détaillées dans notre politique de retour.</p>"
+            "content": "<p>Livraison offerte en France métropolitaine, en 10 jours ouvrés environ. Le numéro de suivi vous est envoyé par e-mail dès l'expédition.</p><p>Vous disposez de 14 jours après réception pour vous rétracter. Les conditions (article non porté, frais de retour à votre charge) sont détaillées dans notre <a href=\"/policies/refund-policy\" title=\"Politique de retour\">politique de retour</a>.</p>"
           }
         }
       },
