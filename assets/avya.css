@@ -492,3 +492,12 @@ h1, h2, .h0, .h1, .h2 {
 .avya-faq.is-tabs .avya-faq__panel[hidden] {
   display: none;
 }
+
+/* ---------- Logo carré : recadrage sur la bande centrale ---------- */
+/* Un logo exporté en carré (mot centré, grandes marges) gonflerait l'en-tête.
+   On l'affiche en 4:1, centré ; un logo déjà recadré (non carré) n'est pas touché. */
+.header__heading-logo.avya-logo--square {
+  aspect-ratio: 4 / 1;
+  height: auto;
+  object-fit: cover;
+}
