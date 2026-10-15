@@ -134,67 +134,69 @@
       }
     },
     "faq": {
-      "type": "collapsible-content",
+      "type": "avya-faq",
       "blocks": {
         "q1": {
-          "type": "collapsible_row",
+          "type": "question",
           "settings": {
-            "heading": "Comment choisir ma taille ?",
-            "icon": "ruler",
-            "row_content": "<p>Mesurez votre tour de poitrine, de taille et de hanches, puis comparez-les au tableau du modèle, sur sa fiche produit. Chaque modèle a sa propre coupe. Entre deux tailles ou en cas de doute, écrivez-nous avant de commander : nous vous aidons à choisir.</p>"
+            "category": "Tailles",
+            "question": "Comment choisir ma taille ?",
+            "answer": "<p>Mesurez votre tour de poitrine, de taille et de hanches, puis comparez-les au tableau du modèle, sur sa fiche produit. Chaque modèle a sa propre coupe. Entre deux tailles ou en cas de doute, écrivez-nous avant de commander : nous vous aidons à choisir.</p>"
           }
         },
         "q2": {
-          "type": "collapsible_row",
+          "type": "question",
           "settings": {
-            "heading": "Quel niveau de maintien choisir ?",
-            "icon": "heart",
-            "row_content": "<p>Chaque body indique un niveau de maintien : léger, modéré ou ferme. Le léger se porte facilement au quotidien ; le ferme est le plus compressif. Si vous débutez avec le gainant, commencez par un niveau léger ou modéré.</p>"
-          }
-        },
-        "q3": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Puis-je retourner un body ?",
-            "icon": "check_mark",
-            "row_content": "<p>Oui, vous disposez de 14 jours après réception pour vous rétracter. Pour des raisons d'hygiène, l'article doit être non porté et renvoyé dans son emballage d'origine. Les frais de retour sont à votre charge. Toutes les conditions figurent dans notre politique de retour.</p>"
-          }
-        },
-        "q4": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Comment l'entretenir ?",
-            "icon": "washing",
-            "row_content": "<p>Les conseils d'entretien sont indiqués sur la fiche de chaque modèle et sur son étiquette. Suivez-les pour préserver la tenue du body.</p>"
+            "category": "Tailles",
+            "question": "Quel niveau de maintien choisir ?",
+            "answer": "<p>Chaque body indique un niveau de maintien : léger, modéré ou ferme. Le léger se porte facilement au quotidien ; le ferme est le plus compressif. Si vous débutez avec le gainant, commencez par un niveau léger ou modéré.</p>"
           }
         },
         "q5": {
-          "type": "collapsible_row",
+          "type": "question",
           "settings": {
-            "heading": "Où et en combien de temps livrez-vous ?",
-            "icon": "truck",
-            "row_content": "<p>Nous livrons en France métropolitaine, livraison offerte, en 10 jours ouvrés environ. Le numéro de suivi vous est envoyé par e-mail dès l'expédition.</p>"
+            "category": "Livraison et retours",
+            "question": "Où et en combien de temps livrez-vous ?",
+            "answer": "<p>Nous livrons en France métropolitaine, livraison offerte, en 10 jours ouvrés environ. Le numéro de suivi vous est envoyé par e-mail dès l'expédition.</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "category": "Livraison et retours",
+            "question": "Puis-je retourner un body ?",
+            "answer": "<p>Oui, vous disposez de 14 jours après réception pour vous rétracter. Pour des raisons d'hygiène, l'article doit être non porté et renvoyé dans son emballage d'origine. Les frais de retour sont à votre charge. Toutes les conditions figurent dans notre politique de retour.</p>"
+          }
+        },
+        "pay": {
+          "type": "question",
+          "settings": {
+            "category": "Livraison et retours",
+            "question": "Puis-je payer en plusieurs fois ?",
+            "answer": "<p>Oui, le paiement en plusieurs fois avec Klarna est proposé à l'étape de paiement, selon l'éligibilité de votre commande.</p>"
+          }
+        },
+        "q4": {
+          "type": "question",
+          "settings": {
+            "category": "Entretien",
+            "question": "Comment l'entretenir ?",
+            "answer": "<p>Les conseils d'entretien sont indiqués sur la fiche de chaque modèle et sur son étiquette. Suivez-les pour préserver la tenue du body.</p>"
           }
         }
       },
       "block_order": [
         "q1",
         "q2",
+        "q5",
         "q3",
-        "q4",
-        "q5"
+        "pay",
+        "q4"
       ],
       "settings": {
         "caption": "Questions fréquentes",
         "heading": "Tout savoir avant de choisir",
-        "heading_size": "h1",
-        "heading_alignment": "center",
-        "layout": "none",
-        "container_color_scheme": "scheme-1",
         "color_scheme": "scheme-1",
-        "open_first_collapsible_row": false,
-        "image_ratio": "adapt",
-        "desktop_layout": "image_second",
         "padding_top": 72,
         "padding_bottom": 56
       }
