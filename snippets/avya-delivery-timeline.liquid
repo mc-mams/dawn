@@ -1,0 +1,39 @@
+{%- comment -%}
+  AVYA — Frise de livraison de la fiche produit.
+  Seule la date de livraison est estimée : « environ N jours ouvrés » (N = 10),
+  calculée dans le navigateur (assets/avya-delivery.js) à partir d'aujourd'hui,
+  jours fériés non pris en compte. Sans JavaScript, seul le délai en jours est affiché.
+
+  Exemple : {% render 'avya-delivery-timeline', days: 10 %}
+{%- endcomment -%}
+
+{%- assign business_days = days | default: 10 -%}
+
+<div class="avya-delivery" data-avya-delivery data-days="{{ business_days }}">
+  <ol class="avya-delivery__steps">
+    <li class="avya-delivery__step">
+      <span class="avya-delivery__icon" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M7 11h18l-1.5 16h-15z"/><path d="M12 11V9a4 4 0 0 1 8 0v2"/></svg>
+      </span>
+      <span class="avya-delivery__label">Commande</span>
+      <span class="avya-delivery__date" data-avya-delivery-start>Aujourd'hui</span>
+    </li>
+    <li class="avya-delivery__step">
+      <span class="avya-delivery__icon" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M3 8h16v14H3zM19 13h6l4 5v4h-10z"/><circle cx="9" cy="24" r="2.5"/><circle cx="24" cy="24" r="2.5"/></svg>
+      </span>
+      <span class="avya-delivery__label">Expédition</span>
+      <span class="avya-delivery__date">Suivi par e-mail</span>
+    </li>
+    <li class="avya-delivery__step">
+      <span class="avya-delivery__icon" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M16 28s-9-8-9-15a9 9 0 0 1 18 0c0 7-9 15-9 15z"/><circle cx="16" cy="13" r="3"/></svg>
+      </span>
+      <span class="avya-delivery__label">Livraison</span>
+      <span class="avya-delivery__date" data-avya-delivery-end>{{ business_days }} jours ouvrés environ</span>
+    </li>
+  </ol>
+  <p class="avya-delivery__note">Estimation en jours ouvrés, hors jours fériés. Livraison offerte en France métropolitaine.</p>
+</div>
+
+<script src="{{ 'avya-delivery.js' | asset_url }}" defer="defer"></script>
