@@ -18,23 +18,106 @@
       "blocks": {
         "subtotal": {
           "type": "subtotal",
-          "settings": {
-          }
+          "settings": {}
         },
         "buttons": {
           "type": "buttons",
-          "settings": {
-          }
+          "settings": {}
         }
       },
       "block_order": [
         "subtotal",
         "buttons"
       ]
+    },
+    "assurance": {
+      "type": "avya-reassurance",
+      "blocks": {
+        "b1": {
+          "type": "item",
+          "settings": {
+            "icon": "truck",
+            "title": "Livraison offerte",
+            "text": "France métropolitaine, 10 jours ouvrés environ"
+          }
+        },
+        "b2": {
+          "type": "item",
+          "settings": {
+            "icon": "return",
+            "title": "14 jours pour changer d'avis",
+            "text": "Conditions dans notre politique de retour"
+          }
+        },
+        "b3": {
+          "type": "item",
+          "settings": {
+            "icon": "lock",
+            "title": "Paiement sécurisé",
+            "text": "Paiement chiffré via Shopify"
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
+    },
+    "sizes": {
+      "type": "rich-text",
+      "blocks": {
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Un doute sur une taille avant de commander ? Mesurez-vous avec notre guide, ou écrivez-nous : nous vous aidons à choisir.</p>"
+          }
+        },
+        "button": {
+          "type": "button",
+          "settings": {
+            "button_label": "Guide des tailles",
+            "button_link": "shopify://pages/guide-des-tailles",
+            "button_style_secondary": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "text",
+        "button"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "payments": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{% render 'avya-payment-icons' %}",
+        "color_scheme": "scheme-1",
+        "padding_top": 0,
+        "padding_bottom": 32
+      }
     }
   },
   "order": [
     "cart-items",
-    "cart-footer"
+    "cart-footer",
+    "assurance",
+    "sizes",
+    "payments"
   ]
 }
