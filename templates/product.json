@@ -94,8 +94,20 @@
           "settings": {
             "heading": "Livraison et retours",
             "icon": "truck",
-            "content": "<p>Livraison offerte en France métropolitaine, en 10 jours ouvrés environ. Le numéro de suivi vous est envoyé par e-mail dès l'expédition.</p><p>Vous disposez de 14 jours après réception pour vous rétracter. Les conditions (article non porté, frais de retour à votre charge) sont détaillées dans notre <a href=\"/policies/refund-policy\" title=\"Politique de retour\">politique de retour</a>.</p>",
+            "content": "<p><strong>Livraison</strong><br>Livraison suivie offerte en France métropolitaine, en 10 jours ouvrés environ. Le numéro de suivi vous est envoyé par e-mail dès l'expédition.</p><p><strong>Retours</strong><br>Vous disposez de 14 jours après réception pour vous rétracter. Pour des raisons d'hygiène, l'article doit être non porté et renvoyé dans son emballage d'origine ; les frais de retour sont à votre charge. Toutes les conditions figurent dans notre <a href=\"/policies/refund-policy\" title=\"Politique de retour\">politique de retour</a>.</p><p><strong>Paiement</strong><br>Paiement chiffré via Shopify. Les moyens de paiement proposés, dont le paiement en plusieurs fois avec Klarna selon éligibilité, s'affichent à l'étape de paiement.</p>",
             "page": ""
+          }
+        },
+        "payments": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'avya-payment-icons' %}"
+          }
+        },
+        "delivery": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'avya-delivery-timeline', days: 10 %}"
           }
         }
       },
@@ -108,6 +120,8 @@
         "size_tip",
         "quantity_selector",
         "buy_buttons",
+        "payments",
+        "delivery",
         "description",
         "tab_size",
         "tab_material",
