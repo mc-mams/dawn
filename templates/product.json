@@ -1,13 +1,52 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
       "type": "main-product",
       "blocks": {
         "title": {
-          "type": "title"
+          "type": "title",
+          "settings": {}
+        },
+        "loox_reviews_loox_trust_badge_n3Brdd": {
+          "type": "shopify://apps/loox-reviews/blocks/loox-trust-badge/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {
+            "layout": "horizontal",
+            "alignment": "left",
+            "scheme-type": "default",
+            "review-title": "reviews",
+            "rating-icon": true,
+            "average-rating": true,
+            "loox-branding": true,
+            "review-count": true,
+            "open-reviews": true,
+            "show-border": true,
+            "border-radius": 8,
+            "font-size": 20,
+            "background-color": "",
+            "secondary-background-color": "",
+            "text-color": "",
+            "rating-icon-color": "",
+            "border-color": ""
+          }
         },
         "price": {
-          "type": "price"
+          "type": "price",
+          "settings": {}
+        },
+        "support": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'avya-support-level', product: product, style: 'full' %}"
+          }
         },
         "variant_picker": {
           "type": "variant_picker",
@@ -16,8 +55,16 @@
             "swatch_shape": "square"
           }
         },
+        "size_tip": {
+          "type": "text",
+          "settings": {
+            "text": "Un doute sur la taille ? Consultez le guide ci-dessous ou écrivez-nous.",
+            "text_style": "subtitle"
+          }
+        },
         "quantity_selector": {
-          "type": "quantity_selector"
+          "type": "quantity_selector",
+          "settings": {}
         },
         "buy_buttons": {
           "type": "buy_buttons",
@@ -27,20 +74,8 @@
           }
         },
         "description": {
-          "type": "description"
-        },
-        "support": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "{% render 'avya-support-level', product: product, style: 'full' %}"
-          }
-        },
-        "size_tip": {
-          "type": "text",
-          "settings": {
-            "text": "Un doute sur la taille ? Consultez le guide ci-dessous ou écrivez-nous.",
-            "text_style": "subtitle"
-          }
+          "type": "description",
+          "settings": {}
         },
         "tab_size": {
           "type": "custom_liquid",
@@ -59,12 +94,14 @@
           "settings": {
             "heading": "Livraison et retours",
             "icon": "truck",
-            "content": "<p>Livraison offerte en France métropolitaine, en 10 jours ouvrés environ. Le numéro de suivi vous est envoyé par e-mail dès l'expédition.</p><p>Vous disposez de 14 jours après réception pour vous rétracter. Les conditions (article non porté, frais de retour à votre charge) sont détaillées dans notre <a href=\"/policies/refund-policy\" title=\"Politique de retour\">politique de retour</a>.</p>"
+            "content": "<p>Livraison offerte en France métropolitaine, en 10 jours ouvrés environ. Le numéro de suivi vous est envoyé par e-mail dès l'expédition.</p><p>Vous disposez de 14 jours après réception pour vous rétracter. Les conditions (article non porté, frais de retour à votre charge) sont détaillées dans notre <a href=\"/policies/refund-policy\" title=\"Politique de retour\">politique de retour</a>.</p>",
+            "page": ""
           }
         }
       },
       "block_order": [
         "title",
+        "loox_reviews_loox_trust_badge_n3Brdd",
         "price",
         "support",
         "variant_picker",
@@ -79,13 +116,13 @@
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
-        "media_position": "left",
-        "gallery_layout": "thumbnail_slider",
         "media_size": "large",
         "constrain_to_viewport": false,
         "media_fit": "cover",
-        "image_zoom": "lightbox",
+        "gallery_layout": "thumbnail_slider",
         "mobile_thumbnails": "show",
+        "media_position": "left",
+        "image_zoom": "lightbox",
         "hide_variants": true,
         "enable_video_looping": false,
         "padding_top": 24,
@@ -95,6 +132,10 @@
     "disclosures": {
       "type": "disclosures",
       "settings": {
+        "heading": "Divulgations",
+        "heading_size": "h2",
+        "open_by_default": false,
+        "color_scheme": "",
         "padding_top": 36,
         "padding_bottom": 0
       }
@@ -106,13 +147,13 @@
         "heading_size": "h1",
         "products_to_show": 4,
         "columns_desktop": 4,
+        "columns_mobile": "2",
         "color_scheme": "scheme-1",
         "image_ratio": "portrait",
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
-        "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 28
       }
