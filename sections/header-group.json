@@ -27,11 +27,19 @@
             "text": "14 jours pour changer d'avis",
             "link": ""
           }
+        },
+        "a3": {
+          "type": "announcement",
+          "settings": {
+            "text": "Payez en plusieurs fois avec Klarna",
+            "link": ""
+          }
         }
       },
       "block_order": [
         "a1",
-        "a2"
+        "a2",
+        "a3"
       ]
     },
     "header": {
