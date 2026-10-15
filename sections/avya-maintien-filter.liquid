@@ -1,0 +1,61 @@
+{%- comment -%}
+  AVYA — Raccourcis « niveau de maintien » au-dessus de la grille d'une collection.
+  Utilise les étiquettes (tags) des produits : « Maintien léger », « Maintien modéré »,
+  « Maintien ferme » (les mêmes que celles lues par snippets/avya-support-level.liquid).
+  Les liens passent par l'URL de filtrage par étiquette de la collection.
+{%- endcomment -%}
+
+{%- liquid
+  assign levels = 'maintien-leger|maintien-modere|maintien-ferme' | split: '|'
+  assign labels = 'Léger|Modéré|Ferme' | split: '|'
+  assign active = ''
+  for tag in current_tags
+    assign tag_handle = tag | handleize
+    if levels contains tag_handle
+      assign active = tag_handle
+    endif
+  endfor
+-%}
+
+{%- if collection.url != blank -%}
+  <div class="color-{{ section.settings.color_scheme }} gradient">
+    <nav class="avya-chips page-width" aria-label="{{ section.settings.label | escape }}">
+      <span class="avya-chips__label">{{ section.settings.label | escape }}</span>
+      <ul class="avya-chips__list list-unstyled" role="list">
+        <li>
+          <a
+            class="avya-chips__chip{% if active == blank %} is-active{% endif %}"
+            href="{{ collection.url }}"
+            {% if active == blank %}aria-current="page"{% endif %}
+          >
+            Tous
+          </a>
+        </li>
+        {%- for level in levels -%}
+          <li>
+            <a
+              class="avya-chips__chip{% if active == level %} is-active{% endif %}"
+              href="{{ collection.url | append: '/' | append: level }}"
+              {% if active == level %}aria-current="page"{% endif %}
+            >
+              {{ labels[forloop.index0] }}
+            </a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </nav>
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "AVYA – Niveaux de maintien",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "text", "id": "label", "label": "Libellé", "default": "Maintien" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Palette de couleurs", "default": "scheme-1" }
+  ],
+  "presets": [{ "name": "AVYA – Niveaux de maintien" }]
+}
+{% endschema %}

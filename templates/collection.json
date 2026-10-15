@@ -4,7 +4,14 @@
       "type": "main-collection-banner",
       "settings": {
         "show_collection_description": true,
-        "show_collection_image": false,
+        "show_collection_image": true,
+        "color_scheme": "scheme-1"
+      }
+    },
+    "maintien": {
+      "type": "avya-maintien-filter",
+      "settings": {
+        "label": "Maintien",
         "color_scheme": "scheme-1"
       }
     },
@@ -31,6 +38,7 @@
   },
   "order": [
     "banner",
+    "maintien",
     "product-grid"
   ]
 }
