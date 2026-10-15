@@ -17,14 +17,14 @@
         "a1": {
           "type": "announcement",
           "settings": {
-            "text": "Livraison suivie en 10 jours ouvrés environ",
+            "text": "Livraison offerte en France métropolitaine",
             "link": ""
           }
         },
         "a2": {
           "type": "announcement",
           "settings": {
-            "text": "Paiement sécurisé",
+            "text": "14 jours pour changer d'avis",
             "link": ""
           }
         }
@@ -40,7 +40,7 @@
         "color_scheme": "scheme-1",
         "menu_color_scheme": "scheme-1",
         "logo_position": "middle-center",
-        "menu": "main-menu",
+        "menu": "avya-principal",
         "menu_type_desktop": "mega",
         "sticky_header_type": "on-scroll-up",
         "show_line_separator": true,

@@ -45,24 +45,20 @@
         "size_tip": {
           "type": "text",
           "settings": {
-            "text": "Entre deux tailles ? Choisissez la plus grande.",
+            "text": "Un doute sur la taille ? Consultez le guide ci-dessous ou écrivez-nous.",
             "text_style": "subtitle"
           }
         },
         "tab_size": {
-          "type": "collapsible_tab",
+          "type": "custom_liquid",
           "settings": {
-            "heading": "Guide des tailles",
-            "icon": "ruler",
-            "content": "<p><strong>Tour de taille</strong> : mesurez au point le plus fin, ruban à plat, sans serrer.</p><p><strong>Tour de hanches</strong> : mesurez au point le plus large.</p><p><strong>Tour de poitrine</strong> : mesurez à hauteur de pointe, en soutien-gorge non rembourré.</p><p>Reportez ensuite vos mesures dans le tableau du modèle.</p>"
+            "custom_liquid": "{% render 'avya-product-details', product: product, kind: 'size' %}"
           }
         },
         "tab_material": {
-          "type": "collapsible_tab",
+          "type": "custom_liquid",
           "settings": {
-            "heading": "Composition et entretien",
-            "icon": "washing",
-            "content": "<p>Composition : à compléter.</p><p>Lavage à 30 °C dans un filet, sans adoucissant. Séchage à plat.</p>"
+            "custom_liquid": "{% render 'avya-product-details', product: product, kind: 'material' %}"
           }
         },
         "tab_shipping": {
@@ -70,7 +66,7 @@
           "settings": {
             "heading": "Livraison et retours",
             "icon": "truck",
-            "content": "<p>Livraison suivie en 10 jours ouvrés environ. Le numéro de suivi vous est envoyé par e-mail dès l'expédition.</p><p>Les conditions de retour et de remboursement sont détaillées dans notre politique de retour.</p>"
+            "content": "<p>Livraison offerte en France métropolitaine, en 10 jours ouvrés environ. Le numéro de suivi vous est envoyé par e-mail dès l'expédition.</p><p>Vous disposez de 14 jours après réception pour vous rétracter. Les conditions (article non porté, frais de retour à votre charge) sont détaillées dans notre <a href=\"/policies/refund-policy\" title=\"Politique de retour\">politique de retour</a>.</p>"
           }
         }
       },

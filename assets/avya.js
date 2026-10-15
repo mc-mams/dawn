@@ -40,16 +40,24 @@
   visibility.observe(observed);
 
   // Dawn peut remplacer le bloc produit au changement de variante : on se ré-accroche.
+  // Les mutations sont regroupées en une seule mise à jour par image affichée.
+  let scheduled = false;
   new MutationObserver(() => {
-    const current = getMainButton();
-    if (current && current !== observed) {
-      visibility.unobserve(observed);
-      observed = current;
-      visibility.observe(observed);
-    }
-    sync();
+    if (scheduled) return;
+    scheduled = true;
+    requestAnimationFrame(() => {
+      scheduled = false;
+      const current = getMainButton();
+      if (current && current !== observed) {
+        visibility.unobserve(observed);
+        observed = current;
+        visibility.observe(observed);
+      }
+      sync();
+    });
   }).observe(document.querySelector('.product__info-container') || document.body, {
     attributes: true,
+    attributeFilter: ['disabled'],
     childList: true,
     subtree: true,
   });

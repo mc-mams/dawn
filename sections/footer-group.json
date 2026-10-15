@@ -4,8 +4,26 @@
   "sections": {
     "footer": {
       "type": "footer",
-      "blocks": {},
-      "block_order": [],
+      "blocks": {
+        "brand": {
+          "type": "text",
+          "settings": {
+            "heading": "AVYA",
+            "subtext": "<p>Bodies pour femmes. Livraison offerte en France métropolitaine.</p><p>Une question ? <a href=\"/pages/contact\" title=\"Contact\">Écrivez-nous</a>.</p>"
+          }
+        },
+        "links": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Informations",
+            "menu": "avya-pied-de-page"
+          }
+        }
+      },
+      "block_order": [
+        "brand",
+        "links"
+      ],
       "settings": {
         "color_scheme": "scheme-2",
         "newsletter_enable": true,

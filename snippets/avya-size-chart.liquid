@@ -1,0 +1,61 @@
+{%- comment -%}
+  AVYA — Tableau des tailles d'un modèle.
+  Les lignes viennent du métachamp produit avya.tableau_tailles
+  (liste de métaobjets « avya_taille »). Rien n'est codé en dur :
+  sans données, le snippet n'affiche rien.
+
+  Paramètres :
+  - product : objet produit (obligatoire)
+
+  Exemple : {% render 'avya-size-chart', product: product %}
+{%- endcomment -%}
+
+{%- assign rows = product.metafields.avya.tableau_tailles.value -%}
+
+{%- if rows != blank -%}
+  {{ 'avya-size-chart.css' | asset_url | stylesheet_tag }}
+  {%- liquid
+    assign has_stature = false
+    assign has_torso = false
+    for row in rows
+      if row.stature_min.value != blank or row.stature_max.value != blank
+        assign has_stature = true
+      endif
+      if row.buste_min.value != blank or row.buste_max.value != blank
+        assign has_torso = true
+      endif
+    endfor
+  -%}
+  <div class="avya-size-chart" tabindex="0" role="region" aria-label="Tableau des tailles – {{ product.title | escape }}">
+    <table>
+      <caption class="visually-hidden">Tableau des tailles – {{ product.title | escape }}, mesures en centimètres</caption>
+      <thead>
+        <tr>
+          <th scope="col">Taille</th>
+          <th scope="col">Tour de poitrine</th>
+          <th scope="col">Tour de taille</th>
+          <th scope="col">Tour de hanches</th>
+          {%- if has_stature -%}<th scope="col">Stature</th>{%- endif -%}
+          {%- if has_torso -%}<th scope="col">Longueur de buste</th>{%- endif -%}
+        </tr>
+      </thead>
+      <tbody>
+        {%- for row in rows -%}
+          <tr>
+            <th scope="row">{{ row.taille.value | escape }}</th>
+            <td>{% render 'avya-size-range', min: row.poitrine_min.value, max: row.poitrine_max.value %}</td>
+            <td>{% render 'avya-size-range', min: row.taille_min.value, max: row.taille_max.value %}</td>
+            <td>{% render 'avya-size-range', min: row.hanches_min.value, max: row.hanches_max.value %}</td>
+            {%- if has_stature -%}
+              <td>{% render 'avya-size-range', min: row.stature_min.value, max: row.stature_max.value %}</td>
+            {%- endif -%}
+            {%- if has_torso -%}
+              <td>{% render 'avya-size-range', min: row.buste_min.value, max: row.buste_max.value %}</td>
+            {%- endif -%}
+          </tr>
+        {%- endfor -%}
+      </tbody>
+    </table>
+  </div>
+  <p class="avya-size-chart__unit">Mesures du corps en centimètres, issues du tableau de ce modèle.</p>
+{%- endif -%}
