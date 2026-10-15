@@ -29,13 +29,6 @@
         "description": {
           "type": "description"
         },
-        "badge": {
-          "type": "text",
-          "settings": {
-            "text": "AVYA",
-            "text_style": "uppercase"
-          }
-        },
         "support": {
           "type": "custom_liquid",
           "settings": {
@@ -71,7 +64,6 @@
         }
       },
       "block_order": [
-        "badge",
         "title",
         "price",
         "support",
