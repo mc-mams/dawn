@@ -427,3 +427,68 @@ h1, h2, .h0, .h1, .h2 {
   outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
   outline-offset: 0.2rem;
 }
+
+/* ---------- FAQ à onglets ---------- */
+.avya-faq {
+  max-width: 76rem;
+  margin: 0 auto;
+}
+
+.avya-faq__header {
+  margin-bottom: 2.4rem;
+  text-align: center;
+}
+
+.avya-faq__tabs {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.avya-faq__tabs[hidden] {
+  display: none;
+}
+
+.avya-faq__tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.avya-faq__tab {
+  flex: none;
+  padding: 0.8rem 1.6rem;
+  border: 0.1rem solid rgba(var(--color-foreground), 0.35);
+  background: transparent;
+  font: inherit;
+  font-size: 1.3rem;
+  letter-spacing: 0.06em;
+  color: rgb(var(--color-foreground));
+  cursor: pointer;
+}
+
+.avya-faq__tab[aria-selected='true'] {
+  background: rgb(var(--color-foreground));
+  color: rgb(var(--color-background));
+}
+
+.avya-faq__tab:focus-visible {
+  outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
+  outline-offset: 0.2rem;
+}
+
+.avya-faq__category {
+  margin: 2.4rem 0 0.8rem;
+}
+
+.avya-faq.is-tabs .avya-faq__category {
+  position: absolute;
+  width: 0.1rem;
+  height: 0.1rem;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+.avya-faq.is-tabs .avya-faq__panel[hidden] {
+  display: none;
+}
