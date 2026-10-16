@@ -17,7 +17,7 @@
         "a1": {
           "type": "announcement",
           "settings": {
-            "text": "Livraison à domicile : 3,99 €",
+            "text": "Livraison à domicile en France métropolitaine : 3,99 €",
             "link": ""
           }
         },

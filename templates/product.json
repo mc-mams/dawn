@@ -94,7 +94,7 @@
           "settings": {
             "heading": "Livraison et retours",
             "icon": "truck",
-            "content": "<p><strong>Livraison</strong><br>Livraison à domicile suivie en France : 3,99 €, en 10 jours ouvrés environ. Le numéro de suivi vous est envoyé par e-mail dès l'expédition.</p><p><strong>Retours</strong><br>Vous disposez de 14 jours après réception pour vous rétracter. Pour des raisons d'hygiène, l'article doit être non porté et renvoyé dans son emballage d'origine ; les frais de retour sont à votre charge. Toutes les conditions figurent dans notre <a href=\"/policies/refund-policy\" title=\"Politique de retour\">politique de retour</a>.</p><p><strong>Paiement</strong><br>Paiement chiffré via Shopify. Les moyens de paiement proposés, dont le paiement en plusieurs fois avec Klarna selon éligibilité, s'affichent à l'étape de paiement.</p>",
+            "content": "<p><strong>Livraison</strong><br>Livraison à domicile suivie en France métropolitaine : 3,99 €, en 5 à 8 jours. Les DOM-TOM ne sont pas desservis. Le numéro de suivi vous est envoyé par e-mail dès l'expédition.</p><p><strong>Retours</strong><br>Vous disposez de 14 jours après réception pour vous rétracter. Pour des raisons d'hygiène, l'article doit être non porté et renvoyé dans son emballage d'origine ; les frais de retour sont à votre charge. Toutes les conditions figurent dans notre <a href=\"/policies/refund-policy\" title=\"Politique de retour\">politique de retour</a>.</p><p><strong>Paiement</strong><br>Paiement chiffré via Shopify. Les moyens de paiement proposés, dont le paiement en plusieurs fois avec Klarna selon éligibilité, s'affichent à l'étape de paiement.</p>",
             "page": ""
           }
         },
@@ -107,7 +107,7 @@
         "delivery": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "{% render 'avya-delivery-timeline', days: 10 %}"
+            "custom_liquid": "{% render 'avya-delivery-timeline', delay: '5 à 8 jours' %}"
           }
         }
       },
