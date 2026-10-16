@@ -1,17 +1,16 @@
 {%- comment -%}
   AVYA — Frise de livraison de la fiche produit.
-  Paramètres (un seul des deux) :
-  - delay : délai affiché tel quel, ex. '5 à 8 jours' (aucune date calculée)
-  - days  : nombre de jours ouvrés ; la date estimée est alors calculée dans le
-            navigateur (assets/avya-delivery.js), jours fériés non pris en compte
 
-  Exemples : {% render 'avya-delivery-timeline', delay: '5 à 8 jours' %}
-             {% render 'avya-delivery-timeline', days: 10 %}
+  Paramètres :
+  - days_min, days_max : délai en jours ouvrés (ex. 5 et 8). La fourchette de dates
+    est calculée dans le navigateur (assets/avya-delivery.js) à partir d'aujourd'hui,
+    week-ends exclus, jours fériés non pris en compte. Sans JavaScript, le délai en
+    jours ouvrés reste affiché.
+
+  Exemple : {% render 'avya-delivery-timeline', days_min: 5, days_max: 8 %}
 {%- endcomment -%}
 
-{%- assign business_days = days -%}
-
-<div class="avya-delivery"{% if business_days != blank %} data-avya-delivery data-days="{{ business_days }}"{% endif %}>
+<div class="avya-delivery" data-avya-delivery data-days-min="{{ days_min }}" data-days-max="{{ days_max }}">
   <ol class="avya-delivery__steps">
     <li class="avya-delivery__step">
       <span class="avya-delivery__icon" aria-hidden="true">
@@ -32,10 +31,10 @@
         <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M16 28s-9-8-9-15a9 9 0 0 1 18 0c0 7-9 15-9 15z"/><circle cx="16" cy="13" r="3"/></svg>
       </span>
       <span class="avya-delivery__label">Livraison</span>
-      <span class="avya-delivery__date" data-avya-delivery-end>{% if delay != blank %}{{ delay | escape }}{% else %}{{ business_days }} jours ouvrés environ{% endif %}</span>
+      <span class="avya-delivery__date" data-avya-delivery-end>{{ days_min }} à {{ days_max }} jours ouvrés</span>
     </li>
   </ol>
-  <p class="avya-delivery__note">Livraison à domicile en France métropolitaine : 3,99 €. DOM-TOM non desservis.</p>
+  <p class="avya-delivery__note">Estimation en jours ouvrés, hors jours fériés. Livraison à domicile en France métropolitaine : 3,99 €. DOM-TOM non desservis.</p>
 </div>
 
 <script src="{{ 'avya-delivery.js' | asset_url }}" defer="defer"></script>
